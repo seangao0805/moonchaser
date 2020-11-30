@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block scripts %}
+    <link href="/static/css/other/card_list.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Event
+{% endblock %}
+
+{% block main %}
+    <div class="div-browser-list">
+        <ul class="ul-browser-list-lg">
+            {% if event_list %}
+                {% for event in event_list %}
+                    <li class="list-animate">
+                        <div class="card" style="width: 15rem;">
+                            <a href="{{ event['url'] }}">
+                                <img class="card-img-top" src="{{ event['logo'] }}" alt="{{ event['title'] }}" title="{{ event['title'] }}">
+                            </a>
+                            <div class="card-body">
+                                <div class="title-wrap">
+                                    <a href="{{ event['owner']['url'] }}">
+                                        <img class="card-img-bot rounded-circle" src="{{ event['owner']['image'] }}" alt="{{ event['owner']['title'] }}" title="{{ event['owner']['title'] }}">
+                                    </a>
+                                    <a href="{{ event['url'] }}">
+                                        <h5 class="card-title">{{ event['title'] }}</h5>
+                                    </a>
+                                </div>
+                                <div class="time-location-wrap">
+                                    <div class="event-location">{{ event['location'] }}</div>
+                                    <div class="event-time">{{ event['ptime'] }}</div>
+                                </div>
+                                {% if runner %}
+                                    <div class="event-list-button">
+                                        <a href="#" class="button-join {{ event['action']['class'] }}" onclick='{{ event["action"]["func"] }}'>{{ event['action']['name'] }}</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}

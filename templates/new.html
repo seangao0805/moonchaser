@@ -1,0 +1,130 @@
+<html lang="utf-8"><head>
+		<meta charset="utf-8">
+		<!-- <meta name="description" content="" />
+		<meta name="keywords" content="" /> -->
+        <link rel="shortcut icon" href="./theme/icon/favicon.ico">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./theme/bootstrap/bootstrap.css">
+<!--		<link rel="stylesheet" href="./theme/zus/common.css">-->
+		<link rel="stylesheet" href="/static/css/zus/welcome.css">
+
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="./js/zus/common.js"></script>
+		<script src="./js/zus/login.js"></script>
+		
+		<script>
+			function visit(url)
+			{
+				window.location.href='./'+url;
+			}
+		</script>
+
+
+		<title>MoonChaser Runner</title>
+	</head>
+	<body style="">
+		<header>
+			<div class="header-content">
+				<a class="nav-brand" href="./">
+					<img src="./theme/images/logo_2.png" class="logo-inc">
+				</a>
+
+				<div class="panel-user">
+					<div class="panel-user-login">
+						<a href="./">Sign In</a>
+					</div>
+				</div>
+
+			
+			</div>
+		</header>
+		<section> <!-- start of main content -->			<div class="div-welcome">
+								<div class="div-auth" id="div-auth">
+				<div class="div-signin ">
+					<header>
+						<h1>登陆</h1>
+					</header>
+					<article>
+						<form method="POST">
+							<input type="text" name="signin_username" required="" placeholder="用户名/邮箱" value="">
+							<input type="password" name="signin_pass" required="" placeholder="密码" value="">
+							<ul class="ul-error-message">
+							</ul>
+							<input type="submit" name="signin" value="Sign In">
+						</form>
+					</article>
+					<footer>
+						<button href="javascript:" onclick="switchSign(0)">Sign up</button>
+					</footer>
+				</div>
+				<div class="div-signup back">
+					<header>
+						<h1>注册</h1>
+					</header>
+					<article>
+						<form method="POST">
+							<input type="email" name="signup_email" required="" placeholder="邮箱" value="">
+							<input type="password" name="signup_pass" required="" placeholder="密码" value="">
+							<input type="password" name="signup_pass2" required="" placeholder="确认密码" value="">
+							<input type="text" name="signup_username" required="" placeholder="用户名" value="">
+							<input type="text" name="signup_invitecode" required="" placeholder="邀请码" value="">
+							<ul class="ul-error-message">
+							</ul>
+							<input type="submit" name="signup" value="注册">
+						</form>
+					</article>
+					<footer>
+						<button href="javascript:" onclick="switchSign(1)">登陆</button>
+					</footer>
+				</div>
+							</div>
+							<div class="div-module-list-welcome">
+				<ul class="ul-module-list">
+					<li id="module-event">
+						<a href="./event">
+							<h1>Event</h1>
+						</a>
+					</li>
+					<li id="module-group">
+						<a href="./group">
+							<h1>Club</h1>
+						</a>
+					</li>
+					<li id="module-people">
+						<a href="./people">
+							<h1>Runner</h1>
+						</a>
+					</li>
+					<li id="module-faq">
+						<a href="./information">
+							<h1>Feeds</h1>
+						</a>
+					</li>
+				</ul>
+						</div>
+			</div>
+
+
+
+
+
+		</section> <!-- end of main content -->
+		<footer>
+			<div class="footer-content">
+				<div class="footer-copyright">Copyright © 2014 Zus Network, Inc.</div>
+				<ul class="footer-terms">
+					<li><a href="./#">隐私说明</a></li>
+					<li><a href="./#">使用条款</a></li>
+					<li><a href="./#">联系我们</a></li>
+					<li><a href="./#">关于我们</a></li>
+					<li><a href="./#">开发团队</a></li>
+				</ul>
+			</div>
+		</footer>
+	
+
+<!-- #0: 0 s; #1: 0.0065839290618896 s; #2: 3.0994415283203E-6 s; #3: 0.0005338191986084 s; --></body></html>

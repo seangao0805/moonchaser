@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block scripts %}
+    <link href="/static/css/other/runner_detail.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    {{ t_runner['basic_info']['title'] }}
+{% endblock %}
+
+{% block main %}
+<section class="section-wrap">
+	<div class="member-wrap">
+		<div class="member-logo">
+			<img class="rounded-circle mid-img" src="{{ t_runner['basic_info']['image'] }}" title="{{ t_runner['basic_info']['title'] }}" alt="{{ t_runner['basic_info']['title'] }}">
+			</div>
+		<div class="member-title">
+			<h1>{{ t_runner['basic_info']['title'] }}</h1>
+		</div>
+	</div>
+	<div class="runner-event-list">
+		<div class="detail-label">
+			<span>Events Joined:&nbsp;</span>
+		</div>
+		<ul>
+			{% for event in t_runner['event_list'] %}
+				<li>
+					<div class="card">
+						<a href="{{ event['url'] }}">
+							<img src="{{ event['img'] }}" class="card-img-top" title="{{ event['title'] }}" alt = "{{ event['alt'] }}">
+						</a>
+						<div class="card-body">
+							<p class="card-text">{{ event['title'] }}</p>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="runner-group-list">
+		<div class="detail-label">
+			<span>Groups Joined:&nbsp;</span>
+		</div>
+		<ul>
+			{% for group in t_runner['group_list'] %}
+				<li>
+					<div class="card">
+						<a href="{{ group['url'] }}">
+							<img src="{{ group['img'] }}" class="card-img-top" title="{{ group['title'] }}" alt = "{{ group['alt'] }}">
+						</a>
+						<div class="card-body">
+							<p class="card-text">{{ group['title'] }}</p>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+{% endblock %}

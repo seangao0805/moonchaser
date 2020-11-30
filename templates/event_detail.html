@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block scripts %}
+    <link href="/static/css/other/event_detail.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    {{ event['title'] }}
+{% endblock %}
+
+{% block main %}
+	<section class="section-wrap">
+		<div class="top-wrap">
+			<div class="top-left-wrap">
+				<div class="event-name">
+					<h1>{{ event['title'] }}</h1>
+				</div>
+
+				<div class="location-time">
+					<div class="event-location">
+						<span class="detail-label">Time:&nbsp</span>
+						<span class="event-time">{{ event['time'] }}</span>
+					</div>
+					<div class="event-location">
+						<span class="detail-label">Meet Up Spot:&nbsp</span>
+						<span class="event-place">{{ event['location'] }}</span>
+					</div>
+				</div>
+			</div>
+			<div class="top-right-wrap">
+				<div class="event-logo">
+					<img src="{{ event['img'] }}" alt="{{ event['title'] }}", title="{{ event['title'] }}">
+				</div>
+			</div>
+		</div>
+
+		<div class="mid-wrap">
+			<div class="mid-left-wrap">
+				<span class="detail-label">Organizer:&nbsp;<br>&nbsp;<span>{{ event['creator']['title'] }}</span></span>
+				<a href = "{{ event['creator']['url'] }}">
+					<img class="rounded-circle" src="{{ event['creator']['image'] }}" alt="{{ event['creator']['title'] }}", title="{{ event['creator']['title'] }}">
+				</a>
+	        </div>
+	        <div class="mid-mid-wrap">
+	        	<div class="event-list-button">
+	        		<ul>
+	        			{% for action in event['action'] %}
+	        				<li>
+	                			<a href="#" class="button-join {{ action['class'] }}" onclick='{{ action["func"] }}'>{{ action['name'] }}</a>
+	                		</li>
+	        			{% endfor %}
+	            	</ul>
+	            </div>
+	        </div>
+		</div>
+
+		<div class="mid-bot-wrap">
+			<span class="detail-label">Runners in:&nbsp;</span>
+        	<ul class="event-ul">
+	        	{% for member in event['member_list'] %}
+	        	<li>
+	        		<a href="{{ member['url'] }}">
+	        			<img class="rounded-circle" src="{{ member['image'] }}" alt="{{ member['title'] }}", title="{{ member['title'] }}">
+	        		</a>
+	        	</li>
+	        	{% endfor %}
+        	</ul>
+        	{% if event['more'] > 0 %}
+        		<span class="detail-label">and {{ event['more'] }} more...&nbsp;</span>
+        	{% endif %}
+        </div>
+
+		<div class="bot-wrap">
+			<div class="event-description">
+				<span class="detail-label">Event Description:<br></span>
+				<p>{{ event['description'] }}</p>
+			</div>
+		</div>	
+			
+		</div>
+	</section>
+
+{% endblock %}

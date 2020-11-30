@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+main
+{
+	margin-top: 10vh;
+}
+
+main h1
+{
+	font-weight: bold;
+	margin: 0;
+}
+
+
+
+main h2 {
+	text-align: center;
+}
+
+main p
+{
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+main span {
+	font-size: 12px;
+}
+
+main a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+main button
+{
+	border-radius: 20px;
+	border: 1px solid #ded8d6;
+	background-color: white;
+	/*color: #FFFFFF;*/
+	font-size: 12px;
+	font-weight: bold;
+	padding: 1rem 2rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.create-button
+{
+	margin-top: 1rem;
+}
+
+main button:active {
+	transform: scale(0.95);
+}
+
+main button:hover
+{
+	cursor: pointer;
+	background-color: #e3f2fd;
+}
+
+main button:focus {
+	outline: none;
+}
+
+main button.ghost {
+	background-color: transparent;
+	border-color: #ded8d6;
+}
+
+main form
+{
+	background-color: #FFFFFF;
+	display: block;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 1rem;
+	height: 100%;
+	text-align: center;
+}
+
+main input
+{
+	border: 1px solid #dfdfe8;
+	padding: 12px 15px;
+	width: 100%;
+}
+
+main .container
+{
+	text-align: center;
+}
+
+.form-title
+{
+	margin-top: 2rem;
+}
+
+main .moon-form {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	/*position: relative;*/
+	/*overflow: hidden;*/
+	/*width: 768px;*/
+	max-width: 100%;
+	min-height: 400px;
+	float: left;
+	display: block;
+}
+
+main .form-container
+{
+	/*position: absolute;*/
+	/*top: 0;*/
+	/*height: 100%;*/
+	transition: all 0.6s ease-in-out;
+	padding: 1rem;
+	display: inline-block;
+	float: left;
+}
+
+main .create-container-left
+{
+	width: 60%;
+	height: 100%;
+	display: inline-block;
+	float: left;
+	padding: 1rem;
+}
+
+
+.left-form-contain
+{
+	display: block;
+	float: left;
+	width: 88%;
+}
+
+.create-container-right
+{
+	width: 35%;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	padding: 1rem;
+	padding-top:0rem; 
+	min-height: 150px;
+	border-left: 1px solid #e9ecef;
+	margin-top: 1rem;
+}
+
+
+.label-note
+{
+	display: block;
+	float: left;
+	font-size: 0.9rem;
+	font-weight: lighter;
+	margin-top: 0.8rem;
+}
+.required
+{
+	color: red;
+	padding: 0.1rem;
+}
+
+.optional
+{
+	color: #aaa;
+	padding: 0.1rem;
+	font-size: 10px;
+}
+
+
+.create-bot
+{
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 0.6rem;
+	padding-left: 1rem;
+	border-bottom: 1px dotted #dfdfe8;
+}
+
+.create-bot .label-note
+{
+	width: 100%;
+	text-align: left;
+}
+
+.create-bot textarea
+{
+	width: 50%;
+	border: 1px solid #dfdfe8;
+}
+
+@media screen and (max-width: 512px)
+{
+    main h1
+	{
+		font-size: 2rem;
+	}
+
+	main button
+	{
+		padding: 0.7rem 1rem;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		transition: transform 80ms ease-in;
+	}
+}
+
+@media screen and (min-width: 1000px)
+{
+	.main
+	{
+		margin-top: 10vh !important;
+	}
+
+	.container
+	{
+		max-width: 800px;
+	}
+}

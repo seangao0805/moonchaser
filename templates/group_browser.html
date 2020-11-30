@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block scripts %}
+	 <link href="/static/css/other/card_list.css" rel="stylesheet">
+	 <link href="/static/css/other/group_browser.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+	group
+{% endblock %}
+
+{% block main %}
+	<div class="div-browser-list">
+        <ul class="ul-browser-list-lg">
+            {% if group_list %}
+                {% for group in group_list %}
+                    <li class="list-animate">
+                        <a href="{{ group['url'] }}" class="card" style="width: 15rem; height: 15rem; background-image: url('{{ group['logo'] }}'); background-size: 15rem 15rem;">
+                        	<div class="groupcard--gradient"></div>
+                            <div class="card-body">
+                                <div class="title-wrap">
+                                    <!-- <a href="{{ group['owner']['url'] }}"> -->
+                                        <!-- <img class="card-img-bot rounded-circle" src="{{ group['owner']['image'] }}" alt="{{ group['owner']['title'] }}"> -->
+                                    <!-- </a> -->
+                                    <!-- <a href="{{ group['url'] }}"> -->
+                                        <h5 class="card-title">{{ group['title'] }}</h5>
+                                        <p>{{ group['member_count'] }} runners</p>
+                                    <!-- </a> -->
+                                </div>
+                                {% if runner %}
+                                    <!-- <div class="group-list-button">
+                                        <a href="#" class="button-join {{ group['action']['class'] }}" onclick='{{ group["action"]["func"] }}'>{{ group['action']['name'] }}</a>
+                                    </div> -->
+                                {% endif %}
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+
+{% endblock %}

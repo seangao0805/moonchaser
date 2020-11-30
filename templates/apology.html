@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block scripts %}
+	<style>
+		.container
+		{
+			text-align: center;
+		}
+		.error-img
+		{
+			width: 100%;
+		}
+
+		@media screen and (min-width: 1000px)
+		{
+			.error-img
+			{
+				width: 30rem;
+			}
+		}
+	</style>
+{% endblock %}
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <img alt="{{ top }}" class="border error-img" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgflip.com/4o7hjl.jpg" title="{{ top }}">
+{% endblock %}

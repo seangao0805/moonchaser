@@ -1,0 +1,15 @@
+# # event_list = EventDAO.get_event_list_browser(runner_id)
+		# event = {'img': '/static/img/event/6/cover.jpg', "title": "The Sunday Hoboken Run is very interesting. And here is why", "location": "Central Park, New York", "time": "Nov 28 04:00 p.m.", \
+		# 		'description': "The Race to the Taste 5K is a beautiful run walk that cuts through the historic Anastasia State Park and surrounding neighborhoods! This race is meant for everyone! Feel like walking? No problem! We encourage people to bring their kids and strollers too! Everyone who attends the Race to the Taste is encouraged to dress the part in their favorite gear!" \
+		# 		}
+		# event['member_list'] = []
+		# member_1 = {'name': "member_zero", "img": "/static/img/avatar/1/cover.jpg", "url": "/runner?rid=1"}
+		# event['member_list'].append(member_1)
+		# member_2 = {'name': "member_one", "img": "/static/img/avatar/2/cover.jpg", "url": "/runner?rid=2"}
+		# event['member_list'].append(member_2)
+		# member_3 = {'name': "member_two", "img": "/static/img/avatar/3/cover.jpg", "url": "/runner?rid=3"}
+		# event['member_list'].append(member_3)
+
+		# event['creator'] = {'name': "Bekele", "img": "/static/img/avatar/4/cover.jpg", "url": "/runner?rid=4"}
+		# event['more'] = 1
+		# event['action'] = {'func': "event_oper("+str(runner_id)+","+str(eid)+","+"'join')", "class":'join', 'name':'Join'}

@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+{% block scripts %}
+    <link href="/static/css/other/create.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+{% endblock %}
+
+{% block title %}
+    Event Create
+{% endblock %}
+
+{% block main %}
+	<script>
+		function create_check(number)
+		{
+			if (number == 1)
+			{
+				var title = $("input[name='eventname']").val();
+				var address = $("input[name='place']").val();
+				var date = $("input[name='date']").val();
+				var time = $("input[name='time']").val();
+				var description = $("#event-desp").val();
+				var eid = $('input[name="eid"]').val();
+
+				var json = '';
+				if (title == "")
+				{
+					json = '{"error": "Event Title Missing!"}';
+					$("input[name='eventname']").focus();
+				}
+				else if (address == "")
+				{
+					json = '{"error": "Event Location Missing!"}';
+					$("input[name='place']").focus();
+				}
+				else if (date == "")
+				{
+					json = '{"error": "Event date Missing!"}';
+					$("input[name='date']").focus();
+				}
+				else if (time == "")
+				{
+					json = '{"error": "Event time Missing!"}';
+					$("input[name='time']").focus();
+				}
+				else if (description == "")
+				{
+					json = '{"error": "Event Description Missing!"}';
+					$("#event-desp").focus();
+				}
+
+				if (json != '')
+				{
+					var obj = JSON.parse(json);
+					error_display(obj);
+					// return false;
+				}
+				else
+				{
+					$.ajax({
+						url:'/edit',
+						type: 'POST',
+						dataType: 'text',
+						data: {
+								'title': title,
+								'address': address,
+								'date': date,
+								'time': time,
+								'description': description,
+								'egtype': 'event',
+								'eid': eid
+						},
+						success: function(data){
+							var result = JSON.parse(data);
+							if ( result.url == undefined )
+							{
+								error_display(result);
+							}
+							else
+							{
+								window.location.href = result.url
+							}
+						},
+						error: function(data){
+							alert(data)
+						}
+					});
+				}
+				
+				// setTimeout(del_error_message, 5000);							
+			}
+			else if (number == 2)
+			{
+				var title = $("input[name='groupname']").val();
+				var location = $("input[name='location']").val();
+				var tags = $("input[name='tags']").val();
+				var description = $("#group-desp").val();
+				var gid = $('input[name="gid"]').val();
+
+				var json = '';
+				if (title == "")
+				{
+					json = '{"error": "Group Title Missing!"}';
+					$("input[name='groupname']").focus();
+				}
+				else if (description == "")
+				{
+					json = '{"error": "Group Description Missing!"}';
+					$("#group-desp").focus();
+				}
+
+				if (json != '')
+				{
+					var obj = JSON.parse(json);
+					error_display(obj);
+					// return false;
+				}
+				else
+				{
+					$.ajax({
+						url:'/edit',
+						type: 'POST',
+						dataType: 'text',
+						data: {
+								'title': title,
+								'location': location,
+								'tags': tags,
+								'description': description,
+								'egtype': 'group',
+								'gid': gid
+						},
+						success: function(data){
+							var result = JSON.parse(data);
+							if ( result.url == undefined )
+							{
+								error_display(result);
+							}
+							else
+							{
+								window.location.href = result.url
+							}
+						},
+						error: function(data){
+							alert(data)
+						}
+					});
+				}
+			}
+
+			event.preventDefault();
+		}
+	</script>
+	{% if egtype == 'event' %}
+		<div class="moon-form" id="createform">
+			<div class="form-container">
+				<div class="form-title"><h1 style="font-family: Pacifico; text-align: center;">Edit Events</h1></div>
+				<form onsubmit="return create_check(1)">
+					<input type="hidden" value="{{ eid }}" name="eid">
+					<div class="create-container-left">
+							<div class="left-form-contain">
+								<div class="label-note">Event Title<span class="required">*</span></div>
+								<input type="text" name="eventname" placeholder="Event Name" value="{{ event['title'] }}">
+
+								<div class="label-note">Meet-up Address<span class="required">*</span></div>
+								<input type="text" name="place" placeholder="Meet-up Location" value="{{ event['location'] }}">
+							</div>
+					</div>
+					<div class="create-container-right">
+						<div class="label-note">Event Date<span class="required">*</span></div>
+						<input type="text" name="date" placeholder="Dec 21" value="{{ event['pdate'] }}">
+
+						<div class="label-note">Time<span class="required">*</span></div>
+						<input type="text" name="time" placeholder="HH:MM a.m. or p.m." value="{{ event['ptime'] }}">
+					</div>
+					<div class="create-bot">
+						<div class="label-note">Event Description<span class="required">*</span></div>
+						<textarea id="event-desp" class="md-textarea form-control" rows="3" placeholder="A short description of your event...">{{ event['description'] }}</textarea>
+					</div>
+					<button class="create-button" type="submit">Submit Edit</button>
+				</form>
+			</div>
+		</div>
+	{% else %}
+		<div class="moon-form" id="createform">
+			<div class="form-container">
+				<div class="form-title"><h1 style="font-family: Pacifico; text-align: center;">Edit Groups</h1></div>
+				<form onsubmit="return create_check(2)">
+					<input type="hidden" value="{{ gid }}" name="gid">
+					<div class="left-form-contain">
+						<div class="label-note">Group Name<span class="required">*</span></div>
+						<input type="text" name="groupname" placeholder="Orchard Street Runners..." value="{{ group['title'] }}">
+					
+						<div class="label-note">Group Tags<span class="optional">(optional)</span></div>
+						<input type="text" name="tags" placeholder="social run or competitive">
+
+						<div class="label-note">Location<span class="optional">*</span></div>
+						<input type="text" name="location" placeholder="New York City...">
+					</div>
+					<div class="create-bot">
+						<div class="label-note">Group Description<span class="required">*</span></div>
+						<textarea style="width: 80%;" id="group-desp" class="md-textarea form-control" rows="3" placeholder="A short description of your group...">{{ group['description'] }}</textarea>
+					</div>
+					<button class="create-button" type="submit">Submit Edit</button>
+				</form>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

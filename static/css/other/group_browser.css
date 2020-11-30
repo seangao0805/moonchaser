@@ -1,0 +1,99 @@
+.ul-browser-list-lg>li
+{
+	min-height: 15rem;
+	max-height: 16rem;
+	border: 1px solid rgba(0,0,0,.125);
+	border-radius: 0.25rem;
+}
+
+.card
+{
+	border: 0px;
+	background-color: #333;
+    box-shadow: 0 0 1px rgba(0,0,0,.05);
+    background-clip: content-box;
+    background-size: cover;
+    background-position: 50% 20%;
+}
+
+.groupcard--gradient
+{
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(rgba(15,20,31,0) 0,rgba(15,20,31,.1) 25%,rgba(15,20,31,.8) 100%);
+    /*background-image: linear-gradient(rgb(13 26 56 / 0%) 0,rgb(129 157 218 / 10%) 25%,rgb(123 164 255 / 80%) 100%);*/
+}
+
+.card-img-top
+{
+	opacity: 0.8;
+}
+
+.card-body
+{
+	orphans: 2;
+    vertical-align: bottom;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.title-wrap
+{
+	display: block;
+	float: left;
+	/*min-height: 11.5rem;*/
+	/*margin-top: 10rem;*/
+}
+
+.title-wrap img
+{
+	width: 45px;
+}
+
+.title-wrap p
+{
+	color: rgba(255,255,255,.7);
+	font-size: 13px;
+	line-height: 1.6;
+	margin-bottom: 2px;
+}
+
+.card-title
+{
+	width: 100%;
+	font-size: 20px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.26);
+    color: #FFF;
+    padding: 11px 0 0 0!important;
+    font-weight: 500;
+    margin-bottom: 0px;
+    font-family: 'Rufina', serif;
+    min-height: auto;
+    max-height: 10rem !important;
+}
+
+.group-list-button
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.button-join
+{
+	width: 7rem;
+	/*float: right;*/
+}
+
+
+@media screen and (max-width: 512px)
+{
+	.ul-browser-list-lg>li
+	{
+		width: auto;
+	}
+}

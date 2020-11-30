@@ -1,0 +1,306 @@
+footer
+{
+	width: 85%;
+}
+
+.section-wrap
+{
+	width: 100%;
+	overflow: hidden;
+	padding: 0 10%;
+}
+
+.top-wrap
+{
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 12rem;
+	max-height: 12rem;
+}
+
+
+.top-left-wrap
+{
+	display: block;
+	float: left;
+	width: 50%;
+	min-height: 12rem;
+	max-height: 12rem;
+	padding: 1rem;
+}
+
+
+.event-name
+{
+	font-family: 'Rufina', serif; */
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding: 0.5rem;
+    max-height: 4.5rem;
+    min-height: 4.5rem;
+}
+
+.event-name h1
+{
+	font-size: 1.75rem;
+	margin-bottom: 0px;
+}
+
+.location-time
+{
+	padding: 0.5rem;
+}
+
+.detail-label
+{
+	color: #a5a5a5;
+	float: left;
+	font-size: 14px;
+}
+
+.detail-label span
+{
+	font-family: 'Rufina', serif;
+	font-weight: lighter;
+	color: black;
+	color: #242428;
+	fill: currentColor;
+	font-size: 14px;
+	line-height: 1.45;
+}
+
+.event-time
+{
+	color: #e74c3c;
+	font-family: 'Rufina', serif;
+	text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.event-place
+{
+	font-family: 'Rufina', serif;
+	text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 1rem;
+    float: left;
+    color: #e74c3c;
+}
+
+.top-right-wrap
+{
+	display: block;
+	float: left;
+	width: 50%;
+	min-height: 12rem;
+	max-height: 12rem;
+	padding: 1rem;
+}
+
+.event-logo img
+{
+	width: 10rem;
+	height: 10rem;
+}
+
+
+.mid-wrap
+{
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 5rem;
+	padding: 0 1rem;
+	/*max-height: 5rem;*/
+}
+
+.mid-left-wrap
+{
+	display: block;
+	float: left;
+	width: 50%;
+	padding: 0 1rem;
+}
+
+.mid-left-wrap img
+{
+	width: 4rem;
+}
+
+.mid-mid-wrap
+{
+	display: block;
+	float: left;
+	width: 50%;
+	min-height: 4rem;
+	max-height: 4rem;
+	/*padding: 0 1rem;*/
+}
+
+.event-list-button
+{
+	display: block;
+	float: left;
+}
+
+.event-list-button ul
+{
+	display: block;
+	float: left;
+	padding-left: 2rem;
+}
+
+.mid-bot-wrap
+{
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 2.5rem;
+}
+
+.mid-bot-wrap span
+{
+	padding: 0.4rem;
+	margin-left: 0.5rem;
+}
+
+.mid-bot-wrap img
+{
+	display: block;
+	float: left;
+	height: 2.3rem;
+}
+
+.mid-bot-wrap ul
+{
+	display: block;
+	float: left;
+	padding-left: 0px;
+}
+
+.mid-bot-wrap li
+{
+	display: block;
+	float: left;
+	margin-left: 0.2rem;
+}
+
+/*.button-join.owner, .button-join.admin
+{
+    color: #888;
+    background-color: #e3f2fd;
+    cursor: default;
+}*/
+
+.button-join.guest
+{
+	margin-left: -1rem;
+}
+
+.button-join.member
+{
+	cursor: default;
+}
+
+.button-join.owner
+{
+	cursor: default;
+}
+
+.bot-wrap
+{
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 10rem;
+	padding: 1rem;
+	width: 75%;
+	/*max-height: 10rem;*/
+}
+
+.event-description
+{
+	color: #888888;
+}
+
+.event-description .detail-label
+{
+	display: block;
+	width: 100%;
+}
+
+
+.button-join
+{
+	width: 8rem;
+}
+
+@media screen and (max-width: 712px)
+{
+	.section-wrap
+	{
+		padding: 0px;
+	}
+	.event-name
+	{
+		min-height: 3rem;
+		max-height: 3rem;
+	}
+    .event-name h1
+	{
+		font-size: 0.75rem;
+	}
+
+	.location-time
+	{
+		padding: 0.5rem;
+	}
+
+	.detail-label
+	{
+		font-size: 0.8rem;
+	}
+
+	.event-time
+	{
+		font-size: 0.8rem;
+		float: left;
+	}
+
+	.event-place
+	{
+		font-size: 0.8rem;
+		float: left;
+	}
+
+	.mid-left-wrap
+	{
+		margin-bottom: 1.5rem;
+	}
+
+	.bot-wrap
+	{
+		width: 100%;
+	}
+
+	main button
+	{
+		padding: 0.7rem 1rem;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		transition: transform 80ms ease-in;
+	}
+}

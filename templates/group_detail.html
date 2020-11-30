@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block scripts %}
+    <link href="/static/css/other/group_detail.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    {{ group['title'] }}
+{% endblock %}
+
+{% block main %}
+	<section class="section-wrap">
+		<div class="top-wrap">
+			<div class="logo-wrap">
+				<img src="{{ group['img'] }}", title="{{ group['title'] }}" alt="{{ group['title'] }}">
+			</div>
+			<div class="detail-title">
+				<h1>{{ group['title'] }}</h1>
+			</div>
+			<div class="detail-organizer">
+				<span class="detail-label">Organizer:&nbsp;<br><span>{{ group['creator']['title'] }}</span></span>
+				<a href = "{{ group['creator']['url'] }}">
+					<img class="rounded-circle" src="{{ group['creator']['image'] }}" alt="{{ group['creator']['title'] }}", title="{{ group['creator']['title'] }}">
+				</a>
+			</div>
+        	<div class="group-list-button">
+        		<ul>
+	        		{% for action in group['action'] %}
+	        			<li>
+	                		<a href="#" class="button-join {{ action['class'] }}" onclick='{{ action["func"] }}'>{{ action['name'] }}</a>
+	                	</li>
+	        		{% endfor %}
+        		</ul>
+            </div>
+		</div>
+		
+		<div class="detail-member">
+			<span class="detail-label">Members:&nbsp;</span>
+        	<ul class="event-ul">
+	        	{% for member in group['member_list'] %}
+	        	<li>
+	        		<a href="{{ member['url'] }}">
+	        			<img class="rounded-circle" src="{{ member['image'] }}" alt="{{ member['title'] }}", title="{{ member['title'] }}">
+	        		</a>
+	        	</li>
+	        	{% endfor %}
+        	</ul>
+        	{% if group['more'] > 0 %}
+        		<span class="detail-label">and {{ group['more'] }} more...&nbsp;</span>
+        	{% endif %}
+		</div>
+		<div class="detail-description bot-top-mr">
+			<span class="detail-label">About:&nbsp;</span>
+			<div class="group-description">
+				{{ group['description'] }}
+			</div>
+		</div>
+	</section>
+{% endblock %}
